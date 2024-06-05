@@ -32,6 +32,7 @@ tar -zxvf squashfs4.3.tar.gz
 
 # Patch, build, and install the source
 cd squashfs4.3
+ulimit -n 65536 # Increase the maximum number of open files
 patch -p0 < ../patches/patch0.txt
 cd squashfs-tools
 make && $SUDO make install
